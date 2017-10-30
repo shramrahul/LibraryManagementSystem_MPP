@@ -22,6 +22,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.util.Arrays;
+
 public class LoginWindow extends Application {
     public static final LoginWindow INSTANCE = new LoginWindow();
 
@@ -65,9 +67,8 @@ public class LoginWindow extends Application {
 
     public static void hideAllWindows() {
         primStage.hide();
-        for (Stage st : allWindows) {
-            st.hide();
-        }
+        Arrays.stream(allWindows).forEach(Stage::hide);
+
     }
 
     @Override
